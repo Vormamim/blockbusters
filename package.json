@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {
     "test": "node scripts/check-board.mjs",
-    "dev": "node scripts/serve.mjs"
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build-dist.mjs"
   }
 }

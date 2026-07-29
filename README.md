@@ -108,10 +108,34 @@ lot of repeats.
 - `scripts/serve.mjs` — local dev server.
 - `scripts/check-board.mjs` — regression suite (`npm test`), run across all three
   board sizes.
-- `data/sample-year11-se.csv` — bundled sample deck.
-- `assets/tvshow.png` — background image (tinted, fixed, full-page).
+- `scripts/build-dist.mjs` — copies just the deployable files into `dist/`
+  (`npm run build`), leaving out dev-only files like `scripts/`, `package.json` and
+  this README.
+- `data/` — bundled sample decks (see above).
+- `assets/` — background images (tinted, fixed, full-page).
 
 ## Deploying
 
-Everything is static — upload the whole repo to any static host (or serve it via
-`npm run dev` locally). No build step, no environment variables, no backend.
+Everything is static — no build step, no environment variables, no backend — but
+`dist/` and a zip make "everything to upload" a single clean artifact instead of the
+whole repo (dev tooling included):
+
+```
+npm run build
+```
+
+produces `dist/` (`index.html`, `style.css`, the JS modules, `data/`, `assets/` — not
+`scripts/`, `package.json` or this README). Zip its *contents* (not the `dist` folder
+itself, so the zip's paths are relative to the site root once extracted):
+
+```
+# Windows (PowerShell)
+Compress-Archive -Path dist\* -DestinationPath blockbusters.zip -Force
+
+# macOS/Linux
+cd dist && zip -r ../blockbusters.zip . && cd ..
+```
+
+Upload that zip's contents to the host (e.g. extracted straight into vormamim.com's
+document root). `dist/` and `*.zip` are gitignored — regenerate them from source
+rather than committing build output.
