@@ -46,6 +46,19 @@ const streakCurrentEl = el("#bb-streak-current");
 const streakBestEl = el("#bb-streak-best");
 const muteBtn = el("#bb-mute-btn");
 
+const instructionsBtn = el("#bb-instructions-btn");
+const instructionsBackdropEl = el("#bb-instructions-backdrop");
+const instructionsCloseBtn = el("#bb-instructions-close");
+
+const landingEl = el("#bb-landing");
+const appShellEl = el("#bb-app");
+const landingCtaBtn = el("#bb-landing-cta");
+
+landingCtaBtn.addEventListener("click", () => {
+  landingEl.hidden = true;
+  appShellEl.hidden = false;
+});
+
 function escapeHtml(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -206,6 +219,21 @@ function renderMuteButton() {
 muteBtn.addEventListener("click", () => {
   toggleMuted();
   renderMuteButton();
+});
+
+function openInstructions() {
+  instructionsBackdropEl.hidden = false;
+}
+function closeInstructions() {
+  instructionsBackdropEl.hidden = true;
+}
+instructionsBtn.addEventListener("click", openInstructions);
+instructionsCloseBtn.addEventListener("click", closeInstructions);
+instructionsBackdropEl.addEventListener("click", (e) => {
+  if (e.target === instructionsBackdropEl) closeInstructions();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !instructionsBackdropEl.hidden) closeInstructions();
 });
 
 startBtn.addEventListener("click", () => {
@@ -375,8 +403,7 @@ function renderStatus() {
   const haveTerritory = state.board.some((c) => c.claimedBy === "player");
   statusEl.textContent =
     `${remaining} hex${remaining === 1 ? "" : "es"} left — ` +
-    "you (green) connect top → bottom, the computer (red) connects left → right whenever you miss one. " +
-    (haveTerritory ? "Pick a lit hex next to your green territory." : "Start from any hex on the top or bottom row.");
+    (haveTerritory ? "pick a lit hex next to your green territory." : "start from any hex on the top or bottom row.");
 }
 
 function reportOutcome(side) {

@@ -10,10 +10,20 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="bb-shell">
+  <div class="bb-landing" id="bb-landing">
+    <div class="bb-landing-inner">
+      <span class="bb-landing-kicker">Vormamim Presents an epic roobot</span>
+      <h1 class="bb-landing-title">BLOCKBUSTERS</h1>
+      <p class="bb-landing-tagline">Claim hexes by matching a clue to its letter, connect a run across the
+        board before the computer does — works with any subject you bring.</p>
+      <button type="button" class="button button-primary bb-landing-cta" id="bb-landing-cta">Play now</button>
+    </div>
+  </div>
+
+  <div class="bb-shell" id="bb-app" hidden>
     <div class="bb-header">
       <div class="bb-brand">
-        <span class="bb-brand-kicker">Letter-keyed quiz board</span>
+        <span class="bb-brand-kicker">Vormamim Presents an epic roobot</span>
         <strong>Blockbusters</strong>
       </div>
       <div class="bb-header-controls">
@@ -22,15 +32,10 @@
           <span class="bb-streak-label">streak</span>
           <span class="bb-streak-best" id="bb-streak-best">Best 0</span>
         </div>
+        <button type="button" class="button button-secondary" id="bb-instructions-btn">Instructions</button>
         <button type="button" class="bb-mute-btn" id="bb-mute-btn" title="Mute sound" aria-pressed="false">Sound: on</button>
       </div>
     </div>
-
-    <p class="bb-tagline">Claim hexes by matching a clue to its letter. You connect
-      top to bottom, a computer opponent connects left to right whenever you miss
-      one — start from any edge hex and build outward, and route around the couple
-      of hexes every board drops. Works with any subject: use the bundled sample
-      deck or bring your own.</p>
 
     <div id="bb-setup">
       <section class="bb-panel-block">
@@ -77,6 +82,27 @@
           <button type="button" class="button button-secondary" id="bb-again-btn">Play again</button>
           <button type="button" class="button button-secondary" id="bb-change-btn">Change setup</button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bb-modal-backdrop" id="bb-instructions-backdrop" hidden>
+    <div class="bb-modal" role="dialog" aria-modal="true" aria-labelledby="bb-instructions-title">
+      <div class="bb-modal-head">
+        <h2 id="bb-instructions-title">How to play</h2>
+        <button type="button" class="bb-modal-close" id="bb-instructions-close" aria-label="Close instructions">&times;</button>
+      </div>
+      <div class="bb-modal-body">
+        <p>Claim hexes by matching a clue to its letter. You (green) connect top to
+          bottom; a computer opponent (red) connects left to right whenever you
+          answer one wrong.</p>
+        <p>Start from any hex on the top or bottom row — after that first pick, you
+          can only choose a hex adjacent to one you already own, so build outward
+          one connected step at a time. A couple of hexes on every board are
+          permanently dropped and can't be claimed by either side, so route around
+          them.</p>
+        <p>Works with any subject: use the bundled sample deck or bring your own via
+          Upload.</p>
       </div>
     </div>
   </div>
