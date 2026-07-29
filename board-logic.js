@@ -19,9 +19,9 @@
 // getting stuck.
 
 export const SIZES = {
-  small: { cols: 5, rows: 4, dropped: 2, hexWidth: 74, label: "Small — 20 hexes" },
-  medium: { cols: 7, rows: 5, dropped: 4, hexWidth: 56, label: "Medium — 35 hexes" },
-  large: { cols: 9, rows: 6, dropped: 6, hexWidth: 44, label: "Large — 54 hexes" },
+  small: { cols: 5, rows: 4, dropped: 2, hexWidth: 110, label: "Small — 20 hexes" },
+  medium: { cols: 7, rows: 5, dropped: 4, hexWidth: 88, label: "Medium — 35 hexes" },
+  large: { cols: 9, rows: 6, dropped: 6, hexWidth: 68, label: "Large — 54 hexes" },
 };
 
 export function shuffle(array) {

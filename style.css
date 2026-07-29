@@ -26,6 +26,13 @@
 
 * { box-sizing: border-box; }
 
+/* Any author rule that sets `display` on an element (e.g. `.bb-idle-hint`'s
+   `display: flex`) beats the `hidden` attribute's user-agent `display: none`,
+   regardless of selector specificity — an element with `hidden` set can still
+   render. Restores `hidden`'s effect globally rather than special-casing it
+   per component. */
+[hidden] { display: none !important; }
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -41,7 +48,7 @@ body {
   background-attachment: fixed;
 }
 
-.bb-shell { max-width: 900px; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+.bb-shell { max-width: 980px; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
 
 /* ------------------------------------------------------------------ header --- */
 .bb-header { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
@@ -127,10 +134,7 @@ body {
   color: var(--muted-2); font-size: 0.85rem; font-family: var(--mono);
 }
 
-.bb-layout { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
-@media (max-width: 720px) {
-  .bb-layout { grid-template-columns: 1fr; }
-}
+.bb-layout { display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
 
 /* ---------------------------------------------------------------------- grid --- */
 .bb-grid { position: relative; margin: 0 auto; }
@@ -189,13 +193,17 @@ body {
 }
 
 /* -------------------------------------------------------------------- panel --- */
+/* Below the grid, not beside it — a full-width row centered under the board. */
+.bb-clue-column { width: 100%; max-width: 620px; }
+
 .bb-idle-hint {
   display: flex; align-items: center; justify-content: center;
-  min-height: 260px; padding: 1.6rem; text-align: center;
+  min-height: 100px; padding: 1.4rem; text-align: center;
   border: 1px dashed var(--panel-border); border-radius: 16px;
   color: var(--muted); font-size: 0.9rem;
 }
 
+.bb-clue-panel { text-align: center; }
 .bb-clue-letter {
   display: inline-block; margin-bottom: 1rem; padding: 0.4rem 1.1rem;
   border-radius: 999px; background: rgba(255, 207, 92, 0.14);
@@ -204,7 +212,7 @@ body {
 }
 .bb-clue-text { margin: 0 0 1.3rem; font-size: 1.35rem; line-height: 1.5; color: var(--ink); }
 
-/* MCQ options — reused for the game's clue answers */
+/* MCQ options — reused for the game's clue answers. Stacked one per row. */
 .mcq-option {
   display: block; width: 100%; text-align: left;
   margin-bottom: 0.6rem; padding: 0.85rem 1.1rem; border-radius: 8px;
