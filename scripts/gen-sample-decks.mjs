@@ -120,11 +120,50 @@ const pythonBeginners = [
   card("Class", "C", "What C is a blueprint for creating objects, bundling together data and functions (methods) in Python?", "Comment", "Concatenation", "Python"),
 ];
 
+const year7Computing = [
+  card("Decomposition", "D", "What D is the process of breaking down a complex problem into smaller, manageable parts?", "Debugging", "Data type", "Year 7 Computing"),
+  card("Pattern Recognition", "P", "What P is the skill of finding similarities or trends within a problem to solve it more efficiently?", "Peripherals", "Pseudocode", "Year 7 Computing"),
+  card("Abstraction", "A", "What A means stripping away unnecessary details to focus only on the important information?", "Algorithm", "Antivirus", "Year 7 Computing"),
+  card("Algorithmic Thinking", "A", "What A is the process of creating a step-by-step set of instructions to solve a problem?", "Abstraction", "Antivirus", "Year 7 Computing"),
+  card("Algorithm", "A", "What A is a precise sequence of instructions designed to complete a specific task?", "Abstraction", "Antivirus", "Year 7 Computing"),
+  card("Sequence", "S", "What S is the specific order in which instructions are executed by a computer?", "Selection", "Storage", "Year 7 Computing"),
+  card("Selection", "S", "What S means making decisions in code using conditional statements like IF, THEN and ELSE?", "Sequence", "Storage", "Year 7 Computing"),
+  card("Iteration", "I", "What I means repeating a block of code multiple times using FOR or WHILE commands?", "Input", "IP Address", "Year 7 Computing"),
+  card("Variable", "V", "What V is a named storage location in a computer's memory used to hold data that can change?", "Virus", "Video card", "Year 7 Computing"),
+  card("Input", "I", "What I is data sent to a computer program, such as a keyboard press?", "Iteration", "IP Address", "Year 7 Computing"),
+  card("Output", "O", "What O is the action or display a computer program returns after processing input?", "Operating System", "Online", "Year 7 Computing"),
+  card("Debugging", "D", "What D is the process of identifying and fixing errors, or bugs, within a program?", "Decomposition", "Data type", "Year 7 Computing"),
+  card("Hardware", "H", "What H describes the physical, touchable components of a computer system?", "Hard drive", "Hyperlink", "Year 7 Computing"),
+  card("Software", "S", "What S describes the digital programs and applications that tell the hardware what to do?", "Sequence", "Storage", "Year 7 Computing"),
+  card("CPU", "C", "What C, standing for Central Processing Unit, is often called the brain of the computer because it processes all instructions?", "Cloud Computing", "Cache", "Year 7 Computing"),
+  card("RAM", "R", "What R, standing for Random Access Memory, is temporary, volatile memory used to hold data currently in use?", "ROM", "Router", "Year 7 Computing"),
+  card("Storage", "S", "What S is non-volatile, permanent hardware used to save files, such as SSDs, HDDs and USB drives?", "Software", "Sequence", "Year 7 Computing"),
+  card("Peripherals", "P", "What P are external hardware components classified as either input devices, like a mouse, or output devices, like a monitor?", "Pattern Recognition", "Pseudocode", "Year 7 Computing"),
+  card("Operating System", "O", "What O is the core software, like Windows, macOS or Linux, that manages computer hardware and other apps?", "Output", "Online", "Year 7 Computing"),
+  card("Binary", "B", "What B is a base-2 number system consisting entirely of 0s and 1s used by computers to process data?", "Byte", "Bit", "Year 7 Computing"),
+  card("Bit", "B", "What B is the smallest unit of digital data, representing a single 0 or 1?", "Byte", "Binary", "Year 7 Computing"),
+  card("Byte", "B", "What B is a group of 8 bits that can represent a single character, like a letter or number?", "Bit", "Binary", "Year 7 Computing"),
+  card("Denary", "D", "What D, also called decimal, is the standard base-10 number system used by humans (0-9)?", "Debugging", "Decomposition", "Year 7 Computing"),
+  card("Network", "N", "What N describes two or more connected computers or devices that share resources and data?", "Netiquette", "Notification", "Year 7 Computing"),
+  card("Internet", "I", "What I is a massive, global network connecting millions of smaller networks worldwide?", "Input", "IP Address", "Year 7 Computing"),
+  card("World Wide Web", "W", "What W, often shortened to WWW, is the collection of web pages and websites accessed via the internet?", "Wi-Fi", "Webcam", "Year 7 Computing"),
+  card("IP Address", "I", "What I is a unique numerical label assigned to every device connected to a computer network?", "Internet", "Input", "Year 7 Computing"),
+  card("Router", "R", "What R is a piece of network hardware that forwards data packets between different computer networks?", "RAM", "ROM", "Year 7 Computing"),
+  card("Cloud Computing", "C", "What C means storing and accessing data or programs over the internet instead of a local hard drive?", "CPU", "Cache", "Year 7 Computing"),
+  card("Phishing", "P", "What P describes fake emails or messages designed to trick users into giving away sensitive information?", "Peripherals", "Pattern Recognition", "Year 7 Computing"),
+  card("Malware", "M", "What M is malicious software, including viruses and spyware, created to damage or disrupt computer systems?", "Machine Learning", "Monitor", "Year 7 Computing"),
+  card("Two-Factor Authentication", "T", "What T is a security process requiring two distinct forms of identification before granting access?", "Trojan", "Touchscreen", "Year 7 Computing"),
+  card("Digital Footprint", "D", "What D is the permanent trail of data and information left behind by a user's online activity?", "Debugging", "Decomposition", "Year 7 Computing"),
+  card("Artificial Intelligence", "A", "What A describes computer systems designed to mimic human intelligence by learning and problem-solving?", "Abstraction", "Algorithm", "Year 7 Computing"),
+  card("Machine Learning", "M", "What M is a subset of AI where computers learn patterns from data without being explicitly programmed?", "Malware", "Monitor", "Year 7 Computing"),
+];
+
 const decks = [
   ["sample-microbit.csv", microbit],
   ["sample-cyber-safety.csv", cyberSafety],
   ["sample-computing-history.csv", computingHistory],
   ["sample-python-beginners.csv", pythonBeginners],
+  ["sample-year7-computing.csv", year7Computing],
 ];
 
 for (const [filename, cards] of decks) {

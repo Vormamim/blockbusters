@@ -47,9 +47,9 @@
         <h2>2. Question deck</h2>
         <p class="bb-deck-status" id="bb-deck-status"></p>
         <div class="bb-deck-actions">
+          <button type="button" class="button button-secondary" id="bb-sample-btn">Choose sample deck</button>
           <button type="button" class="button button-secondary" id="bb-download-btn">Download CSV template</button>
           <button type="button" class="button button-secondary" id="bb-upload-btn">Upload your own CSV</button>
-          <button type="button" class="button button-secondary" id="bb-use-sample-btn" hidden>Use sample deck instead</button>
           <input type="file" id="bb-file-input" accept=".csv,text/csv" hidden>
         </div>
         <div class="bb-upload-errors" id="bb-upload-errors" hidden></div>
@@ -104,6 +104,16 @@
         <p>Works with any subject: use the bundled sample deck or bring your own via
           Upload.</p>
       </div>
+    </div>
+  </div>
+
+  <div class="bb-modal-backdrop" id="bb-sample-backdrop" hidden>
+    <div class="bb-modal" role="dialog" aria-modal="true" aria-labelledby="bb-sample-title">
+      <div class="bb-modal-head">
+        <h2 id="bb-sample-title">Choose a sample deck</h2>
+        <button type="button" class="bb-modal-close" id="bb-sample-close" aria-label="Close">&times;</button>
+      </div>
+      <div class="bb-sample-list" id="bb-sample-list"><!-- populated by app.js --></div>
     </div>
   </div>
 

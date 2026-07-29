@@ -2,11 +2,23 @@ import { SIZES, shuffle, createBoard, claimHex, evaluateBoard, neighborsOf } fro
 import { parseAndValidateCsv, templateCsv } from "./csv.js";
 import { playSelect, playCorrect, playWrong, playWin, playLose, isMuted, toggleMuted } from "./sounds.js";
 
+// Card counts here are just for the picker's display text — the real deck is
+// always read fresh from the CSV file when selected, this isn't a cache.
+const SAMPLE_DECKS = [
+  { key: "year7", label: "Year 7 Computing", file: "data/sample-year7-computing.csv", count: 35 },
+  { key: "year11-se", label: "Year 11 Software Engineering", file: "data/sample-year11-se.csv", count: 92 },
+  { key: "microbit", label: "Beginners micro:bit", file: "data/sample-microbit.csv", count: 25 },
+  { key: "cyber-safety", label: "The Internet and Cyber Safety", file: "data/sample-cyber-safety.csv", count: 25 },
+  { key: "computing-history", label: "History of Modern Computers", file: "data/sample-computing-history.csv", count: 24 },
+  { key: "python-beginners", label: "Python Beginners", file: "data/sample-python-beginners.csv", count: 26 },
+];
+const DEFAULT_SAMPLE_KEY = "year7";
+
 const state = {
   sizeKey: "small",
-  sampleCards: [],
   activeCards: [],
   activeSource: "sample", // "sample" | "upload"
+  sampleDeckKey: DEFAULT_SAMPLE_KEY,
   uploadedFileName: null,
   board: [],
   dims: SIZES.small,
@@ -20,9 +32,12 @@ const el = (sel) => document.querySelector(sel);
 
 const sizeRowEl = el("#bb-size-row");
 const deckStatusEl = el("#bb-deck-status");
+const sampleBtn = el("#bb-sample-btn");
+const sampleBackdropEl = el("#bb-sample-backdrop");
+const sampleCloseBtn = el("#bb-sample-close");
+const sampleListEl = el("#bb-sample-list");
 const downloadBtn = el("#bb-download-btn");
 const uploadBtn = el("#bb-upload-btn");
-const useSampleBtn = el("#bb-use-sample-btn");
 const fileInput = el("#bb-file-input");
 const uploadErrorsEl = el("#bb-upload-errors");
 const startBtn = el("#bb-start-btn");
@@ -104,22 +119,35 @@ state.streak = loadStreak();
 
 // --------------------------------------------------------------- setup --- //
 async function init() {
-  const res = await fetch("data/sample-year11-se.csv");
+  await loadSampleDeck(DEFAULT_SAMPLE_KEY);
+  renderSizeRow();
+  renderMuteButton();
+  renderStreak();
+}
+
+// Fetches and validates one of the bundled CSVs and makes it the active
+// deck. Always re-read from the file rather than cached in state — these are
+// small local files, and re-fetching keeps this identical in shape to how an
+// uploaded file is loaded.
+async function loadSampleDeck(key) {
+  const deck = SAMPLE_DECKS.find((d) => d.key === key);
+  const res = await fetch(deck.file);
   const text = await res.text();
   const result = parseAndValidateCsv(text);
   if (!result.valid) {
-    // The bundled sample should always be valid — surface loudly if it
+    // The bundled samples should always be valid — surface loudly if one
     // somehow isn't, rather than silently starting with an empty deck.
-    deckStatusEl.textContent = "Could not load the bundled sample deck: " + result.errors.join(" ");
-    return;
+    deckStatusEl.textContent = `Could not load "${deck.label}": ` + result.errors.join(" ");
+    return false;
   }
-  state.sampleCards = result.cards;
   state.activeCards = result.cards;
-
-  renderSizeRow();
+  state.activeSource = "sample";
+  state.sampleDeckKey = key;
+  state.uploadedFileName = null;
+  renderUploadErrors(null);
   renderDeckStatus();
-  renderMuteButton();
-  renderStreak();
+  renderSampleList();
+  return true;
 }
 
 function renderSizeRow() {
@@ -140,12 +168,44 @@ function renderSizeRow() {
 
 function renderDeckStatus() {
   const count = state.activeCards.length;
-  deckStatusEl.textContent =
-    state.activeSource === "sample"
-      ? `Using the sample deck: Year 11 Software Engineering (${count} cards).`
-      : `Using your uploaded deck: ${state.uploadedFileName} (${count} cards).`;
-  useSampleBtn.hidden = state.activeSource === "sample";
+  if (state.activeSource === "sample") {
+    const deck = SAMPLE_DECKS.find((d) => d.key === state.sampleDeckKey);
+    deckStatusEl.textContent = `Using the sample deck: ${deck.label} (${count} cards).`;
+  } else {
+    deckStatusEl.textContent = `Using your uploaded deck: ${state.uploadedFileName} (${count} cards).`;
+  }
 }
+
+function renderSampleList() {
+  sampleListEl.innerHTML = "";
+  for (const deck of SAMPLE_DECKS) {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "bb-sample-option";
+    btn.classList.toggle("active", state.activeSource === "sample" && state.sampleDeckKey === deck.key);
+    btn.innerHTML =
+      `<span class="bb-sample-option-label">${escapeHtml(deck.label)}</span>` +
+      `<span class="bb-sample-option-meta">${deck.count} cards</span>`;
+    btn.addEventListener("click", async () => {
+      const ok = await loadSampleDeck(deck.key);
+      if (ok) closeSampleModal();
+    });
+    sampleListEl.appendChild(btn);
+  }
+}
+
+function openSampleModal() {
+  renderSampleList();
+  sampleBackdropEl.hidden = false;
+}
+function closeSampleModal() {
+  sampleBackdropEl.hidden = true;
+}
+sampleBtn.addEventListener("click", openSampleModal);
+sampleCloseBtn.addEventListener("click", closeSampleModal);
+sampleBackdropEl.addEventListener("click", (e) => {
+  if (e.target === sampleBackdropEl) closeSampleModal();
+});
 
 function renderUploadErrors(errors) {
   if (!errors || errors.length === 0) {
@@ -202,14 +262,6 @@ fileInput.addEventListener("change", async () => {
   }
 });
 
-useSampleBtn.addEventListener("click", () => {
-  state.activeCards = state.sampleCards;
-  state.activeSource = "sample";
-  state.uploadedFileName = null;
-  renderUploadErrors(null);
-  renderDeckStatus();
-});
-
 function renderMuteButton() {
   const muted = isMuted();
   muteBtn.textContent = muted ? "Sound: off" : "Sound: on";
@@ -233,7 +285,9 @@ instructionsBackdropEl.addEventListener("click", (e) => {
   if (e.target === instructionsBackdropEl) closeInstructions();
 });
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !instructionsBackdropEl.hidden) closeInstructions();
+  if (e.key !== "Escape") return;
+  if (!instructionsBackdropEl.hidden) closeInstructions();
+  if (!sampleBackdropEl.hidden) closeSampleModal();
 });
 
 startBtn.addEventListener("click", () => {

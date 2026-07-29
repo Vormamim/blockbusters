@@ -71,21 +71,24 @@ preference — it's the entire mechanic ("sharp" near-misses that share the same
 the real answer), enforced by `csv.js`'s validator both on upload and on the bundled
 sample deck.
 
+- **Choose sample deck** on the setup screen opens a picker over all six bundled
+  decks (card counts shown per deck); picking one loads and activates it immediately,
+  replacing whatever was active (sample or uploaded). The picker re-fetches the CSV
+  file each time rather than caching it, so it behaves identically to an upload.
 - **Download CSV template** on the setup screen gives a blank starting point with a
   few generic example rows (not tied to any one subject).
 - **Upload your own CSV** replaces the active deck for that session (not persisted —
-  reload and it's back to the sample deck) once it passes validation; a failing upload
-  shows every row's specific error and leaves whatever deck was active untouched.
-- **`data/sample-year11-se.csv`** — the bundled default deck, 92 concepts covering the
-  NSW Year 11 (Preliminary) Software Engineering syllabus, generated once from the
-  original revision tool's content (not an ongoing dependency between the two
-  projects — this file is just as "yours to edit" as any uploaded CSV would be).
-- **Extra test decks in `data/`**, for trying the game with other subjects via
-  Upload — not wired in as built-in options, just files to pick from the file
-  dialog: `sample-microbit.csv` (Beginners micro:bit, 25 rows), `sample-cyber-safety.csv`
-  (The Internet and Cyber Safety, 25 rows), `sample-computing-history.csv` (History of
-  Modern Computers, 24 rows), `sample-python-beginners.csv` (Python Beginners, 26 rows).
-  Generated and validated by `scripts/gen-sample-decks.mjs`, which doubles as a
+  reload and it's back to the default sample deck) once it passes validation; a
+  failing upload shows every row's specific error and leaves whatever deck was active
+  untouched.
+- **Bundled decks in `data/`**, registered in `app.js`'s `SAMPLE_DECKS` list and all
+  selectable from the picker: `sample-year7-computing.csv` (Year 7 Computing, 35 rows —
+  the default deck on first load), `sample-year11-se.csv` (Year 11 Software
+  Engineering, 92 rows), `sample-microbit.csv` (Beginners micro:bit, 25 rows),
+  `sample-cyber-safety.csv` (The Internet and Cyber Safety, 25 rows),
+  `sample-computing-history.csv` (History of Modern Computers, 24 rows),
+  `sample-python-beginners.csv` (Python Beginners, 26 rows). All but the Year 11 deck
+  were generated and validated by `scripts/gen-sample-decks.mjs`, which doubles as a
   worked example for authoring a deck as data instead of hand-writing CSV.
 
 A deck can have as few as 1 row (repeats fill the rest of the board — see

@@ -291,3 +291,16 @@ body {
 .bb-modal-close:hover { border-color: var(--accent); }
 .bb-modal-body p { margin: 0 0 0.9rem; color: var(--muted-2); font-size: 0.95rem; line-height: 1.6; }
 .bb-modal-body p:last-child { margin-bottom: 0; }
+
+.bb-sample-list { display: flex; flex-direction: column; gap: 0.6rem; }
+.bb-sample-option {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 0.15rem;
+  width: 100%; padding: 0.8rem 1rem; border-radius: 10px; text-align: left;
+  border: 1px solid rgba(0, 229, 255, 0.2); background: rgba(13, 13, 30, 0.7);
+  color: var(--ink); font: inherit; cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.bb-sample-option:hover { border-color: var(--accent); }
+.bb-sample-option.active { border-color: var(--ok); background: rgba(107, 255, 176, 0.12); }
+.bb-sample-option-label { font-weight: 700; font-size: 0.98rem; }
+.bb-sample-option-meta { color: var(--muted); font-size: 0.8rem; }
