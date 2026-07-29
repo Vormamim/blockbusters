@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blockbusters — bring your own quiz</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Squada+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bb-shell">
+    <div class="bb-header">
+      <div class="bb-brand">
+        <span class="bb-brand-kicker">Letter-keyed quiz board</span>
+        <strong>Blockbusters</strong>
+      </div>
+      <div class="bb-header-controls">
+        <div class="bb-streak" id="bb-streak" title="Correct answers in a row, saved on this device across every game">
+          <span class="bb-streak-value" id="bb-streak-current">0</span>
+          <span class="bb-streak-label">streak</span>
+          <span class="bb-streak-best" id="bb-streak-best">Best 0</span>
+        </div>
+        <button type="button" class="bb-mute-btn" id="bb-mute-btn" title="Mute sound" aria-pressed="false">Sound: on</button>
+      </div>
+    </div>
+
+    <p class="bb-tagline">Claim hexes by matching a clue to its letter. You connect
+      top to bottom, a computer opponent connects left to right whenever you miss
+      one — start from any edge hex and build outward, and route around the couple
+      of hexes every board drops. Works with any subject: use the bundled sample
+      deck or bring your own.</p>
+
+    <div id="bb-setup">
+      <section class="bb-panel-block">
+        <h2>1. Board size</h2>
+        <div class="bb-size-row" id="bb-size-row"><!-- populated by app.js --></div>
+      </section>
+
+      <section class="bb-panel-block">
+        <h2>2. Question deck</h2>
+        <p class="bb-deck-status" id="bb-deck-status"></p>
+        <div class="bb-deck-actions">
+          <button type="button" class="button button-secondary" id="bb-download-btn">Download CSV template</button>
+          <button type="button" class="button button-secondary" id="bb-upload-btn">Upload your own CSV</button>
+          <button type="button" class="button button-secondary" id="bb-use-sample-btn" hidden>Use sample deck instead</button>
+          <input type="file" id="bb-file-input" accept=".csv,text/csv" hidden>
+        </div>
+        <div class="bb-upload-errors" id="bb-upload-errors" hidden></div>
+      </section>
+
+      <button type="button" class="button button-primary bb-start-btn" id="bb-start-btn">Start game</button>
+    </div>
+
+    <div id="bb-game" hidden>
+      <p class="bb-status" id="bb-status"></p>
+
+      <div class="bb-layout">
+        <div class="bb-grid" id="bb-grid"><!-- populated by app.js --></div>
+
+        <div class="bb-clue-column">
+          <p class="bb-idle-hint" id="bb-idle-hint">Click a lit (non-dimmed) hex to answer it.</p>
+
+          <div class="bb-clue-panel" id="bb-clue-panel" hidden>
+            <span class="bb-clue-letter" id="bb-clue-letter"></span>
+            <p class="bb-clue-text" id="bb-clue-text"></p>
+            <div class="mcq" id="bb-clue-options"><!-- populated by app.js --></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bb-result" id="bb-result" hidden>
+        <div class="bb-result-big" id="bb-result-big"></div>
+        <div class="bb-result-sub" id="bb-result-sub"></div>
+        <div class="bb-result-actions">
+          <button type="button" class="button button-secondary" id="bb-again-btn">Play again</button>
+          <button type="button" class="button button-secondary" id="bb-change-btn">Change setup</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

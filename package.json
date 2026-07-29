@@ -1,0 +1,9 @@
+{
+  "name": "blockbusters",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/check-board.mjs",
+    "dev": "node scripts/serve.mjs"
+  }
+}

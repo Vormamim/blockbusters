@@ -1,0 +1,232 @@
+/* ==========================================================================
+   Blockbusters — standalone. Self-contained: no shared stylesheet, no
+   dependency on any other project. Design tokens and the hex/button
+   components are carried over from the revision-tool this was spun out of,
+   trimmed to only what this page actually uses.
+   ========================================================================== */
+
+:root {
+  --bg: #090916;
+  --bg-strong: #15162a;
+  --panel: rgba(13, 13, 30, 0.82);
+  --panel-2: rgba(12, 12, 28, 0.86);
+  --panel-border: rgba(120, 90, 255, 0.30);
+  --ink: #f5f1ff;
+  --muted: #c7bbff;
+  --muted-2: #d8d1ff;
+  --accent: #ff4fd8;
+  --accent-2: #8a5cff;
+  --cyan: #9dfcff;
+  --ok: #6bffb0;
+  --err: #ff6b8b;
+  --warn: #ffcf5c;
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.38);
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  font-family: "Inter", "Segoe UI", "Avenir Next", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(rgba(9, 9, 22, 0.86), rgba(9, 9, 22, 0.93)),
+    url("assets/tvshow.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bb-shell { max-width: 900px; margin: 0 auto; padding: 2rem 1.2rem 4rem; }
+
+/* ------------------------------------------------------------------ header --- */
+.bb-header { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.6rem; }
+.bb-brand {
+  display: inline-flex; flex-direction: column; gap: 0.15rem;
+  padding: 0.7rem 1.1rem; border-radius: 14px;
+  border: 1px solid var(--panel-border); background: var(--panel);
+}
+.bb-brand-kicker { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--cyan); }
+.bb-brand strong { font-family: "Squada One", var(--mono), sans-serif; font-size: 1.4rem; }
+
+.bb-header-controls { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+
+.bb-streak {
+  display: flex; align-items: baseline; gap: 0.4rem;
+  padding: 0.4rem 0.9rem; border-radius: 999px;
+  border: 1px solid var(--panel-border); background: var(--panel-2);
+}
+.bb-streak-value { font-family: "Squada One", var(--mono), sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--warn); line-height: 1; }
+.bb-streak-label { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.bb-streak-best { margin-left: 0.3rem; font-size: 0.72rem; color: var(--muted); font-family: var(--mono); }
+
+.bb-mute-btn {
+  padding: 0.45rem 0.9rem; border-radius: 999px;
+  border: 1px solid var(--panel-border); background: var(--panel-2);
+  color: var(--muted-2); font: inherit; font-size: 0.78rem; font-weight: 700;
+  cursor: pointer;
+}
+.bb-mute-btn:hover { border-color: var(--accent); }
+.bb-mute-btn[aria-pressed="true"] { color: var(--muted); }
+
+.bb-tagline { margin: 0 0 1.4rem; color: var(--muted-2); font-size: 0.9rem; max-width: 68ch; }
+
+/* -------------------------------------------------------------------- buttons --- */
+.button {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.4rem;
+  padding: 0.55rem 1rem; border-radius: 999px; border: 1px solid transparent;
+  font: inherit; font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; cursor: pointer; white-space: nowrap;
+}
+.button-primary {
+  background: linear-gradient(90deg, #ff4fd8, #8a5cff); color: #0b0b18;
+  box-shadow: 0 0 0 1px rgba(255, 79, 216, 0.22), 0 14px 30px rgba(255, 79, 216, 0.28);
+}
+.button-secondary { background: rgba(13, 13, 30, 0.70); color: var(--ink); border-color: rgba(0, 229, 255, 0.22); }
+.button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* -------------------------------------------------------------------- setup --- */
+.bb-panel-block {
+  margin-bottom: 1.2rem; padding: 1.2rem 1.3rem; border-radius: 14px;
+  border: 1px solid var(--panel-border); background: var(--panel);
+}
+.bb-panel-block h2 { margin: 0 0 0.8rem; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--cyan); }
+
+.bb-size-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.bb-size-btn {
+  padding: 0.6rem 1.1rem; border-radius: 999px;
+  border: 1px solid rgba(0, 229, 255, 0.3); background: rgba(13, 13, 30, 0.7);
+  color: var(--muted-2); font: inherit; font-size: 0.86rem; font-weight: 700;
+  cursor: pointer;
+}
+.bb-size-btn:hover { border-color: var(--accent); }
+.bb-size-btn.active { background: linear-gradient(90deg, #ff4fd8, #8a5cff); color: #0b0b18; border-color: transparent; }
+
+.bb-deck-status { margin: 0 0 0.9rem; color: var(--muted-2); font-size: 0.86rem; }
+.bb-deck-actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+
+.bb-upload-errors {
+  margin-top: 0.9rem; padding: 0.8rem 1rem; border-radius: 10px;
+  border: 1px solid var(--err); background: rgba(255, 107, 139, 0.1);
+  color: var(--ink); font-size: 0.85rem;
+}
+.bb-upload-errors p { margin: 0 0 0.4rem; font-weight: 700; color: var(--err); }
+.bb-upload-errors ul { margin: 0; padding-left: 1.2rem; }
+.bb-upload-errors li { margin-bottom: 0.2rem; }
+
+.bb-start-btn { display: block; width: 100%; padding: 0.9rem; font-size: 1rem; }
+
+/* --------------------------------------------------------------------- game --- */
+.bb-status {
+  margin-bottom: 1rem; padding: 0.6rem 0.9rem; border-radius: 8px;
+  border: 1px solid var(--panel-border); background: var(--panel-2);
+  color: var(--muted-2); font-size: 0.85rem; font-family: var(--mono);
+}
+
+.bb-layout { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 1.2rem; align-items: start; }
+@media (max-width: 720px) {
+  .bb-layout { grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------------------- grid --- */
+.bb-grid { position: relative; margin: 0 auto; }
+.bb-grid.is-locked { pointer-events: none; opacity: 0.85; }
+
+/* Glossy beveled hex "buttons": a dark bezel (.bb-hex) with a radial-gradient
+   tile (.bb-hex-fill) inset inside it, gold while unclaimed and re-coloured
+   (green=you/correct, red=computer/wrong — the site's usual convention)
+   once claimed. clip-path clips away ordinary box-shadow, so depth comes
+   from `filter: drop-shadow` on the bezel and inset shadows on the fill. */
+.bb-hex {
+  /* --hex-w/--hex-h are set on the #bb-grid ancestor by app.js's sizeGrid(),
+     one value per board size, and inherit down to every hex — do not
+     redeclare them here, that would pin every hex to one fixed size
+     regardless of which board size is active. */
+  position: absolute;
+  width: var(--hex-w, 74px); height: var(--hex-h, 64px);
+  padding: 0; border: none; cursor: pointer;
+  background: #14100a;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.45));
+}
+.bb-hex:disabled { cursor: default; }
+.bb-hex-fill {
+  position: absolute; inset: 4px; display: block;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  background: radial-gradient(circle at 35% 28%, #ffedb0 0%, #f0b93d 45%, #c9861a 82%, #8f5c0c 100%);
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.35), inset 0 3px 4px rgba(255, 255, 255, 0.4);
+  transition: filter 120ms ease;
+}
+.bb-hex:not(:disabled):hover .bb-hex-fill { filter: brightness(1.12); }
+.bb-hex:disabled:not(.claimed-player):not(.claimed-cpu):not(.dropped) .bb-hex-fill { filter: brightness(0.4) saturate(0.5); }
+.bb-hex.selected .bb-hex-fill {
+  box-shadow: inset 0 -4px 6px rgba(0, 0, 0, 0.35), inset 0 3px 4px rgba(255, 255, 255, 0.4),
+    0 0 0 3px #fff, 0 0 10px 2px rgba(255, 255, 255, 0.7);
+}
+.bb-hex.claimed-player .bb-hex-fill {
+  background: radial-gradient(circle at 35% 28%, #d4ffe9 0%, #5be89e 45%, #1fae6c 82%, #0c6b42 100%);
+}
+.bb-hex.claimed-cpu .bb-hex-fill {
+  background: radial-gradient(circle at 35% 28%, #ffd9e2 0%, #ff7d97 45%, #e0405f 82%, #8f1f38 100%);
+}
+.bb-hex.dropped { cursor: default; filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3)); }
+.bb-hex.dropped .bb-hex-fill {
+  background: repeating-linear-gradient(45deg, #1c1712, #1c1712 6px, #262019 6px, #262019 12px);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.bb-hex-letter {
+  position: absolute; inset: 4px; z-index: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Squada One", var(--mono), sans-serif;
+  font-size: 0.78rem; font-weight: 800; letter-spacing: -0.02em;
+  color: rgba(58, 34, 8, 0.88); text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+}
+
+/* -------------------------------------------------------------------- panel --- */
+.bb-idle-hint {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 260px; padding: 1.6rem; text-align: center;
+  border: 1px dashed var(--panel-border); border-radius: 16px;
+  color: var(--muted); font-size: 0.9rem;
+}
+
+.bb-clue-letter {
+  display: inline-block; margin-bottom: 1rem; padding: 0.4rem 1.1rem;
+  border-radius: 999px; background: rgba(255, 207, 92, 0.14);
+  border: 1px solid var(--warn); color: var(--warn);
+  font-family: "Squada One", var(--mono), sans-serif; font-weight: 800; font-size: 1.4rem;
+}
+.bb-clue-text { margin: 0 0 1.3rem; font-size: 1.35rem; line-height: 1.5; color: var(--ink); }
+
+/* MCQ options — reused for the game's clue answers */
+.mcq-option {
+  display: block; width: 100%; text-align: left;
+  margin-bottom: 0.6rem; padding: 0.85rem 1.1rem; border-radius: 8px;
+  border: 1px solid rgba(0, 229, 255, 0.2); background: rgba(13, 13, 30, 0.7);
+  color: var(--ink); font: inherit; font-size: 1.05rem; cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease;
+}
+.mcq-option:hover { border-color: var(--accent); }
+.mcq-option.correct { border-color: var(--ok); background: rgba(107, 255, 176, 0.14); }
+.mcq-option.wrong { border-color: var(--err); background: rgba(255, 107, 139, 0.14); }
+.mcq-option:disabled { cursor: default; }
+
+/* ------------------------------------------------------------------- result --- */
+.bb-result {
+  margin-top: 1.2rem; text-align: center; padding: 2rem 1rem;
+  border: 1px solid var(--panel-border); border-radius: 14px; background: var(--panel-2);
+}
+.bb-result-big {
+  font-family: "Squada One", var(--mono), sans-serif;
+  font-size: clamp(2.2rem, 7vw, 3.2rem); font-weight: 800;
+  background: linear-gradient(90deg, #ff4fd8, #00e5ff);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.bb-result-sub { margin-top: 0.4rem; color: var(--muted); font-size: 0.9rem; }
+.bb-result-actions { display: flex; gap: 0.6rem; justify-content: center; margin-top: 1.2rem; flex-wrap: wrap; }

@@ -1,0 +1,93 @@
+concept,letter,clue,distractor1,distractor2,category
+Sequence,S,"What S is a control structure where instructions execute one after another, in order?",Stack (ADT),String data type,Programming fundamentals
+Binary selection,BS,What BS is a control structure that chooses between exactly two paths based on a condition?,Boolean Statement,Basic Syntax,Programming fundamentals
+Multiway selection,MS,What MS is a control structure that branches to one of several paths based on a single value?,Modular Subroutine,Memory Segment,Programming fundamentals
+Pre-test repetition,P,What P is a loop whose condition is checked before each pass through its body?,Post-test repetition,Procedure,Programming fundamentals
+Post-test repetition,P,"What P is a loop whose condition is checked after each pass, so its body always runs at least once?",Pre-test repetition,Procedure,Programming fundamentals
+Counted repetition,C,"What C is a loop that runs a fixed, predetermined number of times?",Character data type,Conditional loop,Programming fundamentals
+Binary number system,B,What B is a base-2 number system using only the digits 0 and 1?,Boolean data type,Boundary data,Programming fundamentals
+Hexadecimal number system,H,What H is a base-16 number system using the digits 0-9 and A-F?,Heap,Header,Programming fundamentals
+Decimal number system,D,What D is the standard base-10 number system used in everyday counting?,Desk checking,Dynamic typing,Programming fundamentals
+Record,R,What R is a data structure that groups related fields of different types under one entity?,Real (floating point) data type,Runtime error,Programming fundamentals
+Array,A,"What A is a data structure holding many values of the same type, accessed by position?",Agile methodology,Abstract syntax,Programming fundamentals
+Tree,T,"What T is a data structure that models hierarchical, branching relationships between items?",Typical data,Token,Programming fundamentals
+Sequential file,SF,"What SF is a file whose records are read and written strictly in order, from the start?",Static File,Segment Fragment,Programming fundamentals
+Stack (ADT),S,What S is a last-in-first-out data structure where the most recently added item is removed first?,Sequence,Syntax error,Programming fundamentals
+Procedure,P,"What P is a named, reusable block of code that performs an action but does not return a value?",Pre-test repetition,Post-test repetition,Programming fundamentals
+Function,F,"What F is a named, reusable block of code that returns a single value?",Fragment,Flag,Programming fundamentals
+Character data type,C,"What C is a data type representing a single symbol, like 'A'?",Counted repetition,Composite structure,Programming fundamentals
+String data type,S,What S is a data type representing a sequence of characters (text)?,Sequence,Software quality criteria,Programming fundamentals
+Boolean data type,B,What B is a data type with only two possible values: true or false?,Binary number system,Backtracking,Programming fundamentals
+Integer data type,I,"What I is a data type representing a whole number, with no decimal point?",Index,Identifier,Programming fundamentals
+Real (floating point) data type,R,What R is a data type representing a number that can have a decimal point?,Record,Runtime error,Programming fundamentals
+Date/time data type,DT,What DT is a data type representing a calendar date and/or time value?,Data Transfer,Digital Timer,Programming fundamentals
+Divide and conquer,DC,"What DC is an algorithm design strategy that splits a problem into independent subproblems, solves each, then combines the results?",Data Cache,Dynamic Compilation,Programming fundamentals
+Backtracking,B,What B is an algorithm design strategy that builds a solution incrementally and abandons a path as soon as it can't lead to a valid solution?,Breakpoint,Boundary data,Programming fundamentals
+Desk checking,D,"What D is manually tracing a piece of code's execution, line by line, to catch logic errors before running it?",Decimal number system,Debug session,Programming fundamentals
+Object-oriented programming paradigm,OOP,What OOP is a programming paradigm that organises code around classes and objects?,Object Output Protocol,Optimised Operations Plan,Programming fundamentals
+Imperative programming paradigm,IP,What IP is a programming paradigm that uses control structures and assignment statements to describe a step-by-step sequence?,Internal Pointer,Iterative Process,Programming fundamentals
+Logic programming paradigm,LP,What LP is a programming paradigm that defines facts and rules and derives a solution by querying for a result consistent with them?,Linked Pointer,Local Procedure,Programming fundamentals
+Functional programming paradigm,FP,"What FP is a programming paradigm that treats computation as the evaluation of functions, favouring recursion over loops?",File Pointer,Fixed Procedure,Programming fundamentals
+Two's complement,TC,What TC is the standard method for representing negative integers in binary?,Ternary Conditional,Type Casting,Programming fundamentals
+Data dictionary,DD,"What DD is a structured record of every variable in a system, describing its name, type, and constraints?",Double Dispatch,Direct Debugging,Programming fundamentals
+Breakpoint,B,What B is a debugging marker that pauses program execution at a specific line?,Boolean data type,Backtracking,Programming fundamentals
+Single line stepping,SLS,"What SLS is executing a program one line at a time, under manual control?",Standard Loop Structure,Sequential List Search,Programming fundamentals
+Watch,W,What W is a debugger feature that continuously displays the current value of a chosen variable as a program runs?,Waterfall methodology,Wrapper,Programming fundamentals
+Debug output statement,DO,What DO is a temporary print statement added to code to show a variable's value at a point in execution?,Dynamic Overlay,Direct Output,Programming fundamentals
+Boundary data,B,What B is test data that sits exactly on the edge of a valid input range?,Binary number system,Breakpoint,Programming fundamentals
+Typical data,T,"What T is test data representing an ordinary, expected input?",Tree,Threshold,Programming fundamentals
+Erroneous (abnormal) data,E,"What E is test data that falls outside the valid input range, or is of the wrong type entirely?",Encoding,Exception,Programming fundamentals
+Syntax error,S,"What S is an error that breaks the rules of a programming language's grammar, so the program can't run at all?",Stack (ADT),Software quality criteria,Programming fundamentals
+Logic error,L,What L is an error that lets a program run without crashing but produces an incorrect result?,Loop,Literal,Programming fundamentals
+Runtime error,R,What R is an error that crashes a program during execution because of a condition the code didn't account for?,Record,Real (floating point) data type,Programming fundamentals
+Linear search,LS,"What LS is an algorithm that finds a target value by checking every item in a list, one at a time, in order?",Logical Sort,List Sorting,Programming fundamentals
+Software Development Life Cycle (SDLC),SDLC,What SDLC is the sequence of steps a programmer follows from requirements definition through to maintenance?,Software Design Life Cycle,System Development Logic Chain,Programming fundamentals
+Software quality criteria,S,"What S covers the criteria (functionality, performance, readability, documentation) a software solution should be evaluated against?",String data type,Syntax error,Programming fundamentals
+Agile methodology,A,What A is an iterative development methodology that delivers working software in short cycles with continuous client feedback?,Array,Automated testing,Programming fundamentals
+Waterfall methodology,W,What W is a development methodology that completes each phase fully before the next begins?,Watch,Workflow automation,Programming fundamentals
+Version control / code collaboration tools,VC,What VC tracks changes to code over time and lets multiple developers work on the same codebase together?,Virtual Container,Variable Cache,Programming fundamentals
+Encapsulation,E,"What E bundles data and the methods that operate on it within a single unit, restricting direct access?",Extensibility,Exception handling,The object-oriented paradigm
+Abstraction,A,What A hides complex implementation detail and exposes only the features an object needs to show?,Aggregation,Access modifier,The object-oriented paradigm
+Inheritance,I,What I is a mechanism where a new class derives attributes and methods from an existing class?,Interface,Instantiation,The object-oriented paradigm
+Polymorphism,P,What P lets different classes respond differently to a call to the same method name?,Prototyping,Parametric typing,The object-oriented paradigm
+Message passing,MP,What MP is the term for one object calling a method on another object in OOP?,Message Parsing,Machine Program,The object-oriented paradigm
+Code optimisation,CO,What CO covers techniques that improve a program's efficiency or quality without changing its intended behaviour?,Class Overloading,Compiler Optimisation,The object-oriented paradigm
+Facade pattern,F,What F is a design pattern that provides a simplified interface to a complex subsystem?,Factory pattern,Flyweight pattern,The object-oriented paradigm
+Singleton pattern,S,What S is a design pattern that ensures a class has only one instance and a single global access point?,State pattern,Static pattern,The object-oriented paradigm
+Strategy pattern,ST,What ST is a design pattern that defines a family of interchangeable algorithms selectable at runtime?,Structural pattern,Stateless pattern,The object-oriented paradigm
+Observer pattern,O,What O is a design pattern where dependent objects are automatically notified when the object they're watching changes state?,Output pattern,Overload pattern,The object-oriented paradigm
+Unit testing,UT,What UT is testing individual components or modules in isolation?,Utility Testing,Uniform Trial,The object-oriented paradigm
+Subsystem testing,SST,What SST is testing a subset of integrated modules together?,Structured Software Trial,Standard System Test,The object-oriented paradigm
+System testing,SYS,"What SYS is testing the complete, integrated system against its specified requirements?",Synchronised Testing,Systemic Verification,The object-oriented paradigm
+Black-box testing,BB,"What BB is testing based only on a system's inputs and outputs, with no knowledge of its internal code?",Basic Benchmark,Binary Build,The object-oriented paradigm
+White-box testing,WB,"What WB is testing done with full knowledge of a system's internal code, exercising every logical path?",Weighted Benchmark,Workflow Build,The object-oriented paradigm
+Grey-box testing,GB,"What GB is testing that sits between black-box and white-box, using partial knowledge of internal workings?",Global Benchmark,Generic Build,The object-oriented paradigm
+Sensor,S,What S is a component that detects or measures something about the environment and feeds that data into a system?,Simulation,Servo,Programming mechatronics
+Actuator,A,What A is a component that converts a control signal into physical movement or action?,Amplifier,Algorithm,Programming mechatronics
+Capacitor (wiring symbol),C,"What C, drawn as two parallel lines with a gap, stores electrical charge temporarily?",Control interface design,Circuit board,Programming mechatronics
+Resistor (wiring symbol),R,"What R, drawn as a zig-zag line, limits current flow in a circuit?",Relay,Rectifier,Programming mechatronics
+Diode (wiring symbol),D,"What D, drawn as a triangle pointing into a bar, allows current to flow in one direction only?",Diagnostic data,Designing for accessibility,Programming mechatronics
+Motor (wiring symbol),M,"What M, drawn as a circle containing its own initial, converts electrical energy into rotational motion?",Multimeter,Microphone,Programming mechatronics
+LED (wiring symbol),LED,"What LED, drawn as a diode symbol with two small arrows, emits light when current flows through it?",Linear Energy Diode,Low Emission Display,Programming mechatronics
+Diagnostic data,D,What D is data used to identify and troubleshoot problems after they've occurred?,Diode (wiring symbol),Designing for accessibility,Programming mechatronics
+Optimisation data,O,What O is historical data analysed to improve future performance?,Opcode,Output,Programming mechatronics
+Real-time control data,RT,What RT is the live data values actively driving a system's behaviour right now?,Runtime Telemetry,Remote Trigger,Programming mechatronics
+Closed-loop control system,CL,What CL is a control system that continually monitors its own output through a feedback loop and adjusts accordingly?,Circuit Logic,Control Layer,Programming mechatronics
+Open-loop control system,OL,"What OL is a control system that runs on fixed, preset inputs with no feedback?",Output Logic,Overload Limiter,Programming mechatronics
+Degrees of freedom,DOF,What DOF is the number of independent ways a mechanical system can move?,Digital Output Feed,Dynamic Operating Frame,Programming mechatronics
+Microcontroller,MC,"What MC is a small, self-contained computer embedded in a device to run its control program?",Machine Code,Motor Casing,Programming mechatronics
+Opcode,O,What O is the part of a machine instruction that specifies which operation the CPU should perform?,Optimisation data,Operand,Programming mechatronics
+Address register,AR,What AR holds the memory address of the data or instruction the CPU is about to access?,Arithmetic Register,Auxiliary RAM,Programming mechatronics
+Data register,DR,What DR temporarily holds a data value the CPU is currently working with?,Direct Read,Dynamic RAM,Programming mechatronics
+Battery/power selection,B,What B is choosing a battery based on whether its capacity and voltage can sustain a system's power draw for its required runtime?,Backup Power,Bulk Power,Programming mechatronics
+Designing for accessibility,D,"What D is designing a system's interface and mechanism around the specific range of motion, force, or ability the intended user actually has?",Diode (wiring symbol),Diagnostic data,Programming mechatronics
+Autonomous control,AC,"What AC is control code that adjusts a system's own behaviour based on sensor feedback, without a person triggering every action?",Adaptive Calibration,Analog Circuit,Programming mechatronics
+Gradual (ramped) motor control,G,"What G adjusts a motor's actual speed toward a target incrementally, rather than jumping straight to it?",Gearbox,Gyroscope,Programming mechatronics
+Sensor-actuator integration,SAI,"What SAI is writing code that reads a sensor, decides based on that reading, and then triggers an actuator?",Signal Amplifier Interface,System Automation Index,Programming mechatronics
+Simulation,S,"What S is a software model of a mechatronic system's behaviour, used to test code without physical hardware?",Sensor,Schematic,Programming mechatronics
+Prototype,P,"What P is an early physical (or partially physical) build of a system, used to test real-world behaviour before final production?",Platform,Protocol,Programming mechatronics
+Live field test,LFT,"What LFT is testing the finished system in its real intended environment, under real operating conditions?",Low Fidelity Trial,Local Function Test,Programming mechatronics
+Control interface design,C,"What C covers the considerations (clear controls, feedback, safeguards, responsiveness) in designing how an operator controls a mechatronic system?",Capacitor (wiring symbol),Command console,Programming mechatronics
+Unit testing mechatronic components,UT,"What UT is testing each component's control algorithm in isolation, rather than only testing the whole assembled system?",Universal Trial,Upgrade Test,Programming mechatronics
+Threshold-based control,TBC,What TBC compares a current value to a target and triggers different actions depending on which side of a tolerance band it falls on?,Time-Based Calibration,Torque Balance Circuit,Programming mechatronics
+Proportional control,PC,"What PC scales the size of a correction in proportion to the size of the current error, rather than a fixed-size reaction?",Program Counter,Power Converter,Programming mechatronics
