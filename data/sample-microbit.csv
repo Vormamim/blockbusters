@@ -1,0 +1,26 @@
+concept,letter,clue,distractor1,distractor2,category
+LED,L,What L is a tiny light on the micro:bit's 5x5 grid used to display patterns and text?,Loudspeaker,Lithium battery,micro:bit
+Button,B,What B is a physical input labelled A or B that you can press on the micro:bit?,Bluetooth,Battery,micro:bit
+Radio,R,What R is a wireless communication mode used to send simple messages between micro:bits?,Resistor,RGB sensor,micro:bit
+Accelerometer,A,"What A is the built-in sensor that detects shaking, tilting and free-fall?",Antenna,Algorithm,micro:bit
+Compass,C,What C is the built-in sensor that detects magnetic north and needs calibration before first use?,CPU,Capacitor,micro:bit
+MakeCode,M,What M is the block-based drag-and-drop editor commonly used to program the micro:bit?,Microphone,Motor,micro:bit
+Python,P,What P is the text-based programming language you can also use to code the micro:bit?,Pin,Processor,micro:bit
+GPIO,G,What G is the group of general-purpose input/output pins along the edge connector?,Gyroscope,Grid,micro:bit
+Simulator,S,What S lets you test your micro:bit code in a browser before flashing it to a real device?,Speaker,Sensor,micro:bit
+Flash,F,What F is the act of transferring your compiled program onto the micro:bit over USB?,Firmware,Function,micro:bit
+USB,U,What U is the cable connection used to flash programs and power the micro:bit from a computer?,Ultrasonic sensor,Underscore,micro:bit
+Loop,L,"What L is a block of code that repeats instructions, such as forever or repeat?",Logic gate,Light sensor,micro:bit
+Variable,V,"What V is a named storage location in code that can hold a changing value, like a score?",Vibration motor,Voltage,micro:bit
+Condition,C,"What C is a block, like if, that only runs code when something is true?",Compass,Capacitor,micro:bit
+Speaker,S,What S is the built-in component on newer micro:bits (v2) that can play sounds and music?,Sensor,Switch,micro:bit
+Microphone,M,What M is the built-in component on newer micro:bits (v2) that can detect sound level?,Motor,Magnet,micro:bit
+Algorithm,A,"What A is a precise step-by-step set of instructions for solving a problem, before it's turned into code?",Array,Antenna,micro:bit
+List,L,What L is an ordered collection of multiple values stored under one variable name?,Loop,LED,micro:bit
+Debug,D,What D is the process of finding and fixing errors in your code?,Display,Driver,micro:bit
+Edge connector,E,What E is the strip of metal pads along the bottom of the micro:bit used to attach external components?,Event,Enclosure,micro:bit
+Event,E,"What E is a trigger block, such as on button A pressed, that runs code in response to something happening?",Edge connector,Encoder,micro:bit
+Battery,B,What B is the external power pack that lets the micro:bit run without being plugged into a computer?,Button,Bluetooth,micro:bit
+Bluetooth,B,What B is the short-range wireless technology the micro:bit can use to communicate with a phone or tablet app?,Battery,Button,micro:bit
+Pin,P,What P is a single connection point on the edge connector that can be used for input or output?,Program,Processor,micro:bit
+Firmware,F,What F is the built-in software on the micro:bit that lets it run and interpret uploaded programs?,Function,Flash,micro:bit

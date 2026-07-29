@@ -1,0 +1,27 @@
+concept,letter,clue,distractor1,distractor2,category
+Variable,V,What V is a named location in memory used to store a value that can change while a program runs?,Void,Vector,Python
+String,S,"What S is a data type used to store text, written inside quotation marks in Python?",Syntax,Statement,Python
+Integer,I,"What I is a whole-number data type in Python, with no decimal point, such as 5 or -12?",Indentation,Index,Python
+Float,F,"What F is a data type used to store numbers with a decimal point, such as 3.14?",Function,For loop,Python
+Boolean,B,What B is a data type that can only be True or False?,Break,Built-in function,Python
+List,L,"What L is an ordered, changeable collection of items written inside square brackets in Python?",Loop,Library,Python
+For loop,F,What F is a loop that repeats a block of code once for each item in a sequence?,Float,Function,Python
+While loop,W,What W is a loop that keeps repeating a block of code as long as a condition stays true?,Whitespace,Wildcard,Python
+If statement,I,What I is a control structure that runs a block of code only when a condition is true?,Integer,Index,Python
+Function,F,"What F is a named, reusable block of code that performs a specific task, defined using def in Python?",Float,For loop,Python
+Parameter,P,"What P is a named input variable listed in a function's definition, which receives a value when the function is called?",Print,Python,Python
+Return,R,What R is the keyword used inside a function to send a value back to wherever the function was called?,Range,Read,Python
+Print,P,What P is the built-in function used to display output to the screen?,Parameter,Python,Python
+Input,I,What I is the built-in function used to get typed text from the user while a program runs?,Integer,Indentation,Python
+Comment,C,"What C is a line of text starting with a hash symbol that Python ignores when running the program, used to explain code?",Class,Concatenation,Python
+Indentation,I,What I is the consistent whitespace at the start of a line that Python uses to show which lines belong to a block?,Integer,Index,Python
+Module,M,"What M is a file of Python code, like math or random, that you can bring into your own program with import?",Method,Mutable,Python
+Import,I,What I is the keyword used to bring a module's code into your own program so you can use it?,Index,Integer,Python
+Dictionary,D,"What D is a collection of key-value pairs, written inside curly braces, that lets you look values up by a unique key?",Debugging,Data type,Python
+Tuple,T,"What T is an ordered, unchangeable collection of items written inside round brackets in Python?",Type,Try-except,Python
+Index,I,"What I is the position number used to access a specific item in a list or string, starting from 0?",Integer,Indentation,Python
+Concatenation,C,"What C is the act of joining two strings together, often using the plus operator?",Comment,Class,Python
+Syntax error,S,"What S is a mistake that breaks Python's grammar rules, stopping the program from running at all?",String,Statement,Python
+Debugging,D,What D is the process of finding and fixing errors in a program?,Dictionary,Data type,Python
+f-string,F,"What F is a Python string prefix that lets you insert variable values directly inside a string, like f""Hello {name}""?",Float,Function,Python
+Class,C,"What C is a blueprint for creating objects, bundling together data and functions (methods) in Python?",Comment,Concatenation,Python

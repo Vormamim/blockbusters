@@ -1,0 +1,25 @@
+concept,letter,clue,distractor1,distractor2,category
+Abacus,A,What A is an ancient calculating tool that uses beads on rods to represent numbers?,Algorithm,Analytical Engine,Computing History
+Analytical Engine,A,What A was Charles Babbage's 19th-century mechanical design for a general-purpose programmable computer?,Abacus,ARPANET,Computing History
+Ada Lovelace,A,"What A is regarded as the first computer programmer, for her notes on Babbage's Analytical Engine?",Analytical Engine,Abacus,Computing History
+Alan Turing,A,What A is the mathematician who proposed the Turing Test and helped break the Enigma code at Bletchley Park?,ARPANET,Abacus,Computing History
+ENIAC,E,"What E was one of the first general-purpose electronic computers, built in the 1940s and filling an entire room?",Ethernet,Encryption,Computing History
+Vacuum tube,V,"What V is the fragile, bulb-like electronic component used to switch and amplify signals in early computers?",Von Neumann architecture,Video card,Computing History
+Transistor,T,"What T is the tiny semiconductor switch, invented in 1947, that replaced vacuum tubes and shrank computers dramatically?",Turing Test,Toolbar,Computing History
+Integrated circuit,I,What I is a chip that packs many transistors onto a single piece of silicon?,Internet,Icon,Computing History
+Microprocessor,M,What M is a complete processor built onto a single integrated circuit chip?,Mainframe,Mouse,Computing History
+Mainframe,M,"What M is a large, powerful computer used by big organisations for bulk data processing, common from the 1950s-70s?",Microprocessor,Mouse,Computing History
+Personal computer,P,"What P is a computer designed for use by one person at a time, at home or in an office?",Punch card,Printer,Computing History
+Punch card,P,What P is a stiff paper card with holes used to store data and instructions for early computers?,Personal computer,Printer,Computing History
+UNIVAC,U,"What U was the first commercially produced electronic computer in the United States, delivered in 1951?",USB,Update,Computing History
+Colossus,C,What C was the code-breaking computer built at Bletchley Park during World War II to help crack German ciphers?,CPU,Cache,Computing History
+Von Neumann architecture,V,What V describes a computer design where program instructions and data share the same memory?,Vacuum tube,Video card,Computing History
+ARPANET,A,"What A was the early computer network, funded by the US military, that became the basis for the modern internet?",Abacus,Ada Lovelace,Computing History
+World Wide Web,W,"What W is the system of linked hypertext pages, invented by Tim Berners-Lee in 1989, that we access via browsers?",Windows,Wi-Fi,Computing History
+Moore's Law,M,What M is the observation that the number of transistors on a chip roughly doubles every two years?,Mainframe,Microprocessor,Computing History
+Graphical user interface,G,"What G, often shortened to GUI, lets users interact with a computer using windows, icons and a mouse instead of typed commands?",Google,Gigabyte,Computing History
+Mouse,M,"What M is the handheld pointing device, popularised by Xerox and then Apple, used to control an on-screen cursor?",Mainframe,Microprocessor,Computing History
+Floppy disk,F,"What F is a portable magnetic storage disk, common from the 1970s to 1990s, that gave the Save icon its shape?",Firewall,Format,Computing History
+Hard disk drive,H,What H is a storage device that uses spinning magnetic platters to store data permanently inside a computer?,Hyperlink,HTTP,Computing History
+Smartphone,S,"What S is a mobile phone that combines computing power, internet access and apps in one handheld device?",Server,Software,Computing History
+Silicon Valley,S,"What S is the region in California, named for the material used in chips, that became the centre of the global tech industry?",Spreadsheet,Server,Computing History

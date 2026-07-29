@@ -80,6 +80,13 @@ sample deck.
   NSW Year 11 (Preliminary) Software Engineering syllabus, generated once from the
   original revision tool's content (not an ongoing dependency between the two
   projects — this file is just as "yours to edit" as any uploaded CSV would be).
+- **Extra test decks in `data/`**, for trying the game with other subjects via
+  Upload — not wired in as built-in options, just files to pick from the file
+  dialog: `sample-microbit.csv` (Beginners micro:bit, 25 rows), `sample-cyber-safety.csv`
+  (The Internet and Cyber Safety, 25 rows), `sample-computing-history.csv` (History of
+  Modern Computers, 24 rows), `sample-python-beginners.csv` (Python Beginners, 26 rows).
+  Generated and validated by `scripts/gen-sample-decks.mjs`, which doubles as a
+  worked example for authoring a deck as data instead of hand-writing CSV.
 
 A deck can have as few as 1 row (repeats fill the rest of the board — see
 `buildDeck()`'s shuffle-and-drain repeat-fill), though the setup screen will note if

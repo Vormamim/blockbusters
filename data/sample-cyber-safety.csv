@@ -1,0 +1,26 @@
+concept,letter,clue,distractor1,distractor2,category
+Password,P,What P is a secret string of characters used to prove your identity when logging in?,Phishing,Proxy,Cyber Safety
+Phishing,P,What P is a scam that tricks you into revealing personal details through fake emails or websites?,Password,Pop-up,Cyber Safety
+Malware,M,What M is a general term for malicious software designed to damage or gain unauthorised access to a device?,Modem,Megabyte,Cyber Safety
+Firewall,F,What F is a security system that monitors and filters network traffic between a trusted network and the internet?,File,Format,Cyber Safety
+VPN,V,What V is a service that encrypts your internet connection and hides your IP address?,Virus,Video call,Cyber Safety
+HTTPS,H,"What H is the secure version of the protocol web browsers use to load pages, shown as a padlock in the address bar?",Hyperlink,Hard drive,Cyber Safety
+URL,U,What U is the web address you type or click to reach a specific page?,Upload,USB,Cyber Safety
+Cookie,C,What C is a small file a website stores in your browser to remember your preferences or login?,Cache,CAPTCHA,Cyber Safety
+Browser,B,"What B is the software you use to view websites, such as Chrome, Firefox or Edge?",Bandwidth,Bluetooth,Cyber Safety
+ISP,I,What I is the company that provides your connection to the internet?,IP address,Icon,Cyber Safety
+IP address,I,What I is the unique numerical label assigned to a device on a network?,ISP,Inbox,Cyber Safety
+Router,R,What R is the device that directs data between your home network and the internet?,RAM,Ransomware,Cyber Safety
+Wi-Fi,W,What W is the wireless technology that lets devices connect to a network without cables?,Webcam,Worm,Cyber Safety
+Encryption,E,What E is the process of scrambling data so only someone with the right key can read it?,Email,Ethernet,Cyber Safety
+Two-factor authentication,T,"What T is a login step that asks for a second proof of identity, like a text code, after your password?",Trojan,Tracking cookie,Cyber Safety
+Cyberbullying,C,"What C is the use of digital technology to repeatedly harass, threaten or humiliate someone?",Cache,CAPTCHA,Cyber Safety
+Digital footprint,D,What D is the trail of data you leave behind from your online activity?,Download,Domain,Cyber Safety
+Privacy settings,P,What P are the controls on an account or app that decide who can see your information?,Phishing,Pop-up,Cyber Safety
+Antivirus,A,What A is software designed to detect and remove malicious programs from a device?,Attachment,Adware,Cyber Safety
+Spam,S,"What S is unwanted, often repeated junk email usually sent in bulk?",Server,Search engine,Cyber Safety
+Ransomware,R,What R is malware that locks or encrypts your files and demands payment to restore access?,Router,RAM,Cyber Safety
+Trojan,T,What T is malware disguised as legitimate software to trick you into installing it?,Two-factor authentication,Tracking cookie,Cyber Safety
+Virus,V,What V is malicious code that attaches itself to files and spreads when they're shared or opened?,VPN,Video call,Cyber Safety
+Worm,W,What W is malware that spreads by itself across networks without needing a host file?,Wi-Fi,Webcam,Cyber Safety
+Strong password,S,"What S is a password that's long, unique and mixes letters, numbers and symbols to resist guessing?",Spam,Server,Cyber Safety
